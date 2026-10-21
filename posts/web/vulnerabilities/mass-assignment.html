@@ -25,7 +25,7 @@ permalink: /mass-assignment
     <div class="container header-inner">
       <div class="logo">
         <img src="/index/logo.png" alt="Logo" class="logo__img">
-        <a href="/index.html" class="logo__text">Yunseul</a>
+        <a href="/index.html" class="logo__text">Miyu</a>
       </div>
 
       <nav class="nav">
@@ -81,7 +81,7 @@ permalink: /mass-assignment
         <p>예를 들어 회원가입을 위해 사용자가 다음과 같은 데이터를 보냈다고 가정해보자.</p>
 <pre><code>
 {
-   "username": "yunseul", 
+   "username": "miyu", 
    "email": "y7nse4l@gmail.com"
 }
 
@@ -139,7 +139,7 @@ public class User {
         <p>따라서 공격자가 직접 HTTP 요청을 조작하여 다음과 같은 데이터를 보낼 수 있다.</p>
 <pre><code>
 {
-   "username": "yunseul", 
+   "username": "miyu", 
    "email": "y7nse4l@gmail.com",
    "isAdmin": true
 }
@@ -147,7 +147,7 @@ public class User {
 </code></pre>
         <p>그러면 Spring은 내부적으로 다음과 같은 동작을 수행한다.</p>
 <pre><code>
-user.setUsername("yunseul"); 
+user.setUsername("miyu"); 
 user.setEmail("y7nse4l@gmail.com"); 
 user.setAdmin(true);
 
@@ -237,3 +237,52 @@ public class User {
         <h2 id="reference">Reference</h2>
         <hr class="post-devider">
         <a href="https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html" class="text-link">https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html</a>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Thanks for reading! ♡ © 0xM1yu</span>
+    </div>
+  </footer>
+</body>
+
+<script>
+  const sections = document.querySelectorAll(".article h2");
+  const links = document.querySelectorAll(".toc-link");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+
+          links.forEach((link) => {
+            link.classList.remove("toc-link--active");
+
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("toc-link--active");
+            }
+          });
+        } 
+      });
+    },
+    {
+      rootMargin: "-30% 0px -60% 0px",
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>
+
+</html>
