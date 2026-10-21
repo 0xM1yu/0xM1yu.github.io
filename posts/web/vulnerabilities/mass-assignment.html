@@ -1,3 +1,6 @@
+---
+permalink: /mass-assignment
+---
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -12,7 +15,7 @@
   <meta property="og:image" content="https://0xm1yu.github.io/assets/web/vulnerabilities/mass-assignment-vulnerability.png">
   <meta property="og:description" content="Mass Assignment 취약점의 개념과 발생 원인을 분석하고 대응 방법을 정리했습니다!">
 
-  <link rel="stylesheet" href="../../../template.css">
+  <link rel="stylesheet" href="/template.css">
   <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
@@ -21,13 +24,13 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
-        <img src="../../../index/logo.png" alt="Logo" class="logo__img">
-        <a href="../../../index.html" class="logo__text">Yunseul</a>
+        <img src="/index/logo.png" alt="Logo" class="logo__img">
+        <a href="/index.html" class="logo__text">Yunseul</a>
       </div>
 
       <nav class="nav">
         <a href="#" class="nav-link">About Me</a>
-        <a href="../../../index.html" class="nav-link nav-link--active">Blog</a>
+        <a href="/index.html" class="nav-link nav-link--active">Blog</a>
       </nav>
     </div>
   </header>
@@ -69,7 +72,7 @@
         <p>웹사이트를 개발하다 보면 클라이언트가 보낸 데이터를 객체에 한 번에 담아주는 Mass Assignment 기능을<br>자주 사용하게 된다.</p>
         <p>이 기능은 개발 생산성을 크게 높여주지만 잘못 사용하면 보안 취약점으로 이어질 수 있어 조심해야 한다.</p>
         <p>오늘은 Mass Assignment라는 기능이 무엇인지, 그리고 왜 문제가 되는지 정리해보았다!</p>
-        <img src="../../../assets/study.jpg" style="display:block; margin:40px auto; max-width:300px; height:auto;">
+        <img src="/assets/study.jpg" style="display:block; margin:40px auto; max-width:300px; height:auto;">
         <s style="font-size: 18px">사실은 CTF나 워게임을 풀 때 Mass Assignment 취약점을 자주 만났었는데 시간이 지나고 계속 까먹고 또 까먹고를<br>반복해서 머리에 확실하게 저장하려고 블로그 글을 쓴다.</s>
 
         <h2 id="mass-assignment">Mass Assignment란?</h2>
