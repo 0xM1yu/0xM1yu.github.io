@@ -84,7 +84,6 @@ img { max-width: 100%; display: block; }
 
 .nav-link--active{
   color: #2563eb;
-  border-bottom-color: transparent;
   font-weight: 600;
 }
 
@@ -133,23 +132,6 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
 }
 
-.post-meta .dot{ margin: 0 10px; }
-
-.hero-image-wrap{
-  margin: 30px auto 0;
-  width: min(960px, 100%);
-  border-radius: 18px;
-  overflow: hidden;
-  background: #f1f5f9;
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
-}
-
-.hero-image{
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-}
-
 .section-divider {
   border: none;
   height: 1px;
@@ -158,7 +140,7 @@ img { max-width: 100%; display: block; }
   max-width: 1072px;
 }
 
-.post-devider {
+.post-divider {
   border: 0;
   border-top: 1px solid #C9CED6;
   margin: 0 0 15px 0;
@@ -224,17 +206,21 @@ h2[id] {
   animation-delay: 0.12s;
 }
 
-.article .lead{
-  font-size: 26px;
-  line-height: 1.55;
-  letter-spacing: -0.01em;
-  margin: 0 0 18px;
-}
-
 .article p {
   font-size: 18px;
   color: #0f172a;
   margin: 0 0 8px;
+}
+
+.article .study-image {
+  margin: 40px auto;
+  max-width: 300px;
+  height: auto;
+}
+
+.article .solution-title {
+  font-size: 21px;
+  margin: 0 0 4px;
 }
 
 .article h2 {
@@ -297,8 +283,6 @@ h2[id] {
   border-right: 0;
 }
 
-/* ===== article table ===== */
-
 .article th {
   background: #f2f2f2;
   color: #565658;
@@ -317,7 +301,7 @@ h2[id] {
   background: #fafafa;
 }
 
-/* ===== article table ===== */
+/* ===== information cards ===== */
 
 .infocard {
   border: 1px solid #d9d9d9;
@@ -353,16 +337,6 @@ h2[id] {
   font-size: 18px;
 }
 
-.infocard-body ul {
-  margin: 0;
-  padding-left: 22px;
-}
-
-.infocard-body li {
-  margin-bottom: 12px;
-  line-height: 1.7;
-}
-
 .infocard-body li:last-child {
   margin-bottom: 0;
 }
@@ -371,6 +345,7 @@ h2[id] {
   color: #1a73e8;
   text-decoration: underline;
   text-underline-offset: 2px;
+  overflow-wrap: anywhere;
 }
 
 p.img-description {
@@ -432,10 +407,6 @@ p.img-description {
     padding: 0 16px;
   }
 
-  .article {
-    width: 100%;
-  }
-
   .article pre {
     padding: 12px;
     font-size: 13px;
@@ -448,7 +419,5 @@ p.img-description {
 
 @media (max-width: 560px) {
   .nav{ gap: 14px; }
-  .hero-subtitle{ font-size: 16px; }
-  .article .lead{ font-size: 20px; }
   .article p{ font-size: 16px; }
 }

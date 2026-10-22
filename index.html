@@ -1,222 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miyu Blog</title>
-    <link rel="stylesheet" href="./index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
-    <!-- Miyu logo font -->
-    <link href="https://fonts.googleapis.com/css2?family=Sekuya&family=Yuji+Boku&display=swap" rel="stylesheet">
-    <!-- main-miyu font -->
-    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=Sekuya&family=Yuji+Boku&display=swap" rel="stylesheet"> <!-- main-subtitle 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b2024">
+  <meta name="description" content="Miyu의 Offensive Security, Web, Exploit Research 블로그">
+  <title>Miyu Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="designs/cyber/index.css?v=20261022-refactor">
+  <script src="designs/cyber/index.js?v=20261022-refactor" defer></script>
 </head>
-
 <body>
-     <div class="ocean">
-        <video autoplay loop muted playsinline class="bg-video">
-            <source src="index/miyu.mp4" type="video/mp4">
-        </video>
-
-        <header>
-            <div class="container">
-                <div class="logo">
-                    <a href="https://www.flaticon.com/kr/free-icons/" title="수족관 아이콘"></a>
-                    <img src="index/logo.png">
-                    <a href="index.html" class="logo-text">0xM1yu</a>
-                </div>
-                <nav>
-                    <a href="#">Contact</a>
-                    <a href="#">About Me</a>
-                    <div class="lang-switch" data-active="ko" aria-label="Language toggle">
-                        <button type="button" data-lang="ko">Korean</button>
-                        <button type="button" data-lang="en">English</button>
-                        <span class="thumb" aria-hidden="true"></span>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <section class="main-section">
-            <div class="main-div">
-                <h1 class="main-title">Miyu<span class="title-emoji">🎔</span></h1>
-                <p class="main-subtitle">Offensive Security · Web · Exploit Research</p>
-                <div class="search-box">
-                    <input type="text" placeholder="Search topics...">
-                    <img src="index/search.png" alt="">
-                </div>
-            </div>
-        </section>
-    </div>
-    <nav class="category-nav">
-        <div class="category-container">
-            <a href="#" class="category-link active" data-category="all">All posts</a>
-            <div class="category-group" data-parent="projects">
-                <a href="#" class="category-link" data-category="projects">Projects</a>
-                <div class="subcategory-row">
-                    <a href="#" class="subcategory-link" data-subcategory="ad-foundation">AD Foundation</a>
-                </div>
-            </div>
-            <div class="category-group" data-parent="web">
-                <a href="#" class="category-link" data-category="web">Web Hacking</a>
-                <div class="subcategory-row">
-                    <a href="#" class="subcategory-link" data-subcategory="web/cve-analysis">CVE Analysis</a>
-                    <a href="#" class="subcategory-link" data-subcategory="web/vulnerabilities">Vulnerability</a>
-                </div>
-            </div>
-            <div class="category-group" data-parent="system">
-                <a href="#" class="category-link" data-category="system">System Hacking</a>
-                <div class="subcategory-row">
-                    <a href="#" class="subcategory-link" data-subcategory="system/cve-analysis">CVE Analysis</a>
-                </div>
-            </div>
-            <div class="category-group" data-parent="tools">
-                <a href="#" class="category-link" data-category="tools">Attack Tools</a>
-                <div class="subcategory-row">
-                    <a href="#" class="subcategory-link" data-subcategory="burpsuite">Burp Suite</a>
-                </div>
-            </div>
-            <div class="category-group" data-parent="mitre">
-                <a href="#" class="category-link" data-category="mitre">MITRE ATT&CK</a>
-                <div class="subcategory-row">
-                    <a href="#" class="subcategory-link" data-subcategory="Reconnaissance">Reconnaissance</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Resource Development">Resource Development</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Initial Access">Initial Access</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Execution">Execution</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Persistence">Persistence</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Privilege Escalation">Privilege Escalation</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Defense Evasion">Defense Evasion</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Credential Access">Credential Access</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Discovery">Discovery</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Lateral Movement">Lateral Movement</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Collection">Collection</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Command and Control">Command and Control</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Exfiltration">Exfiltration</a>
-                    <a href="#" class="subcategory-link" data-subcategory="Impact">Impact</a>
-                </div>
-            </div>
-            <a href="#" class="category-link" data-category="programming">Language</a>
+  <section class="hero" aria-label="Miyu blog introduction">
+    <header class="site-header">
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="#about">About Me</a>
+        <span class="nav-divider" aria-hidden="true"></span>
+        <div class="language-switch" data-active="ko" role="group" aria-label="Language">
+          <button type="button" data-lang="ko" aria-pressed="true">Korean</button>
+          <button type="button" data-lang="en" aria-pressed="false">English</button>
+          <span class="thumb" aria-hidden="true"></span>
         </div>
-    </nav>
+      </nav>
+    </header>
 
-    <main class="layout">
-        <section class="main-content">
-            <ul class="post-list">
-                <li class="post-card" data-subcategory="web/cve-analysis">
-                    <a href="/ejs-ssti-analysis" class="card-link">
-                        <div class="post-thumbnail">
-                            <img src="assets/web/cve-analysis/ejs-ssti/ejs_ssti.png" alt="esj 3.1.x ssti 취약점 분석 썸네일">
-                        </div>
-                        <div class="card-meta">
-                            <span class="card-category">Web Hacking</span>
-                            <span class="card-date">17 Jan 2026</span>
-                        </div>
-                        <p>ejs 3.1.x SSTI 취약점 분석</p>
-                        <span class="card-description">ejs 템플릿에서 발생하는 SSTI 취약점을 분석합니다.</span>
-                    </a>
-                </li>
-                <li class="post-card" data-subcategory="web/vulnerabilities">
-                    <a href="/mass-assignment" class="card-link">
-                        <div class="post-thumbnail">
-                            <img src="assets/web/vulnerabilities/mass-assignment-vulnerability.png">
-                        </div>
-                        <div class="card-meta">
-                            <span class="card-category">Web Hacking</span>
-                            <span class="card-date">09 June 2026</span>
-                        </div>
-                        <p>Mass Assignment Vulnerability란?<br>원인과 대응 방법</p>
-                        <span class="card-description">Mass Assignment 취약점의 개념과 원인을 분석합니다.</span>
-                    </a>
-                </li>
-            </ul>
-        </section>
-    </main>
+    <div class="hero-content">
+      <div class="hero-heading">
+        <h1 class="hero-name" aria-label="Miyu">
+          <span class="sr-only">Miyu</span>
+          <svg class="brush-wordmark" viewBox="-37.5 -10 1514 720" role="presentation" aria-hidden="true">
+            <defs>
+              <image id="brush-source" href="designs/cyber/miyu-brush-reference.png" width="1514" height="720"/>
+              <filter id="white-paint" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -3 6 0 1 -2"/>
+              </filter>
+              <filter id="pink-paint" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  4 -4 0 1 -2"/>
+              </filter>
+              <clipPath id="m-area"><path d="M0 0 H662 V215 L625 292 L580 390 L530 565 L490 720 H0 Z"/></clipPath>
+              <clipPath id="i-body-area"><path d="M575 330 H695 L700 375 L675 445 L625 570 L535 580 L535 390 Z"/></clipPath>
+              <clipPath id="i-dot-area"><path d="M625 225 H730 V327 H625 Z"/></clipPath>
+              <clipPath id="y-area"><path d="M665 310 H910 V345 L895 390 L870 460 L835 535 L795 655 H605 L645 570 L700 435 Z"/></clipPath>
+              <clipPath id="u-area"><path d="M865 295 H1105 V385 H1135 V560 H865 Z"/></clipPath>
+              <mask id="m-reveal" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                <g transform="translate(0 90) scale(.69 .73)" fill="none" stroke="white" stroke-linecap="round">
+                  <path class="reveal-stroke" pathLength="1" style="--delay:.058s;--duration:.278s" stroke-width="160" d="M100 671 C238 473 469 188 697 34"/>
+                  <path class="reveal-stroke" pathLength="1" style="--delay:.335s;--duration:.179s" stroke-width="160" d="M688 39 C627 181 493 488 453 607"/>
+                  <path class="reveal-stroke" pathLength="1" style="--delay:.514s;--duration:.272s" stroke-width="160" d="M456 596 C582 394 778 139 922 46"/>
+                  <path class="reveal-stroke" pathLength="1" style="--delay:.786s;--duration:.185s" stroke-width="160" d="M920 50 C866 201 714 518 684 677"/>
+                </g>
+              </mask>
+              <mask id="i-body-reveal" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                <g transform="translate(0 90) scale(.69 .73)" fill="none" stroke="white" stroke-linecap="round">
+                  <path class="reveal-stroke" pathLength="1" style="--delay:.994s;--duration:.191s" stroke-width="160" d="M990 351 C914 499 842 655 721 689"/>
+                </g>
+              </mask>
+              <mask id="i-dot-reveal" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                <g transform="translate(0 90) scale(.69 .73)" fill="none" stroke="white" stroke-linecap="round">
+                  <path class="reveal-stroke" pathLength="1" style="--delay:1.19s;--duration:.058s" stroke-width="110" d="M974 281 L1021 254"/>
+                </g>
+              </mask>
+              <mask id="y-reveal" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                <g transform="translate(0 90) scale(.69 .73)" fill="none" stroke="white" stroke-linecap="round">
+                  <path class="reveal-stroke" pathLength="1" style="--delay:1.266s;--duration:.301s" stroke-width="165" d="M1071 371 C971 550 1034 605 1115 535 C1192 467 1208 377 1261 345"/>
+                  <path class="reveal-stroke" pathLength="1" style="--delay:1.566s;--duration:.272s" stroke-width="165" d="M1286 347 C1207 548 1121 685 973 765"/>
+                </g>
+              </mask>
+              <mask id="u-reveal" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                <g transform="translate(0 90) scale(.69 .73)" fill="none" stroke="white" stroke-linecap="round">
+                  <path class="reveal-stroke" pathLength="1" style="--delay:1.85s;--duration:.231s" stroke-width="165" d="M1358 362 C1274 558 1354 588 1434 511 C1494 452 1522 371 1551 342"/>
+                  <path class="reveal-stroke" pathLength="1" style="--delay:2.081s;--duration:.22s" stroke-width="165" d="M1584 345 C1500 538 1512 613 1636 540"/>
+                </g>
+              </mask>
+              <mask id="underline-reveal" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                <path class="underline-reveal-path" transform="translate(0 65) scale(.69 .73)" pathLength="1" d="M430 744 C845 696 1431 606 1986 515" fill="none" stroke="white" stroke-width="78" stroke-linecap="round"/>
+              </mask>
+              <mask id="heart-reveal" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                <path class="heart-reveal-path" transform="translate(0 65) scale(.69 .73)" pathLength="1" d="M1651 502 C1596 403 1558 214 1627 115 C1682 42 1765 102 1788 211 C1856 95 1946 70 1990 144 C2044 257 1860 422 1651 502Z" fill="none" stroke="white" stroke-width="165" stroke-linejoin="round"/>
+              </mask>
+            </defs>
+            <g clip-path="url(#m-area)"><use href="#brush-source" filter="url(#white-paint)" mask="url(#m-reveal)"/></g>
+            <g clip-path="url(#i-body-area)"><use href="#brush-source" filter="url(#white-paint)" mask="url(#i-body-reveal)"/></g>
+            <g clip-path="url(#i-dot-area)"><use href="#brush-source" filter="url(#white-paint)" mask="url(#i-dot-reveal)"/></g>
+            <g clip-path="url(#y-area)"><use href="#brush-source" filter="url(#white-paint)" mask="url(#y-reveal)"/></g>
+            <g clip-path="url(#u-area)"><use href="#brush-source" filter="url(#white-paint)" mask="url(#u-reveal)"/></g>
+            <use href="#brush-source" filter="url(#pink-paint)" mask="url(#underline-reveal)"/>
+            <use href="#brush-source" filter="url(#white-paint)" mask="url(#heart-reveal)"/>
+            <use href="#brush-source" filter="url(#pink-paint)" mask="url(#heart-reveal)"/>
+          </svg>
+        </h1>
+      </div>
+      <p class="hero-subtitle">Offensive Security <span>·</span> Web <span>·</span> Exploit Research</p>
+      <label class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="M16 16 L22 22"/></svg>
+        <span class="sr-only">Search posts</span>
+        <input id="post-search" type="search" placeholder="Search topics..." autocomplete="off">
+      </label>
+    </div>
+  </section>
+
+  <main class="content-shell" id="posts">
+    <section class="posts-section" aria-labelledby="latest-posts-title">
+      <h2 class="section-title" id="latest-posts-title"><span class="slashes" aria-hidden="true">//</span> <span>Latest Posts</span></h2>
+      <!-- <a href="https://www.flaticon.com/free-icons/folder" title="folder icons">Folder icons created by Magnific - Flaticon</a> -->
+      <ul class="post-grid" id="post-grid">
+        <li class="post-card" data-category="web">
+          <a href="/ejs-ssti-analysis/" class="post-link">
+            <div class="post-image"><img src="/posts/web/cve-analysis/ejs-ssti-analysis/ejs_ssti.png" alt="EJS 3.1.x SSTI article illustration" loading="lazy"></div>
+            <div class="post-info">
+              <div class="post-meta"><span class="folder-icon" aria-hidden="true"></span><span>Web Hacking</span><time datetime="2026-01-17">2026.01.17</time></div>
+              <h3>ejs 3.1.x SSTI 취약점 분석</h3>
+              <p>ejs 템플릿에서 발생하는 SSTI 취약점을 분석합니다.</p>
+            </div>
+          </a>
+        </li>
+        <li class="post-card post-card--green" data-category="web">
+          <a href="/mass-assignment/" class="post-link">
+            <div class="post-image"><img src="/posts/web/vulnerabilities/mass-assignment/mass-assignment-vulnerability.png" alt="Mass Assignment Vulnerability article illustration" loading="lazy"></div>
+            <div class="post-info">
+              <div class="post-meta"><span class="folder-icon" aria-hidden="true"></span><span>Web Hacking</span><time datetime="2026-06-09">2026.06.09</time></div>
+              <h3>Mass Assignment Vulnerability란? 원인과 대응 방법</h3>
+              <p>Mass Assignment 취약점의 개념과 원인을 분석합니다.</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="empty-state" id="empty-state" hidden>일치하는 글이 없습니다.</p>
+    </section>
+
+    <aside class="sidebar" aria-labelledby="categories-title">
+      <h2 class="section-title" id="categories-title"><span class="slashes" aria-hidden="true">//</span> <span>Categories</span></h2>
+      <div class="category-list" role="group" aria-label="Post categories">
+        <button type="button" class="category-button" data-category="all" aria-pressed="true"><span class="folder-icon" aria-hidden="true"></span><span>All posts</span><span class="category-count"></span><span class="chevron" aria-hidden="true"></span></button>
+        <button type="button" class="category-button" data-category="web" aria-pressed="false"><span class="folder-icon" aria-hidden="true"></span><span>Web Hacking</span><span class="category-count"></span><span class="chevron" aria-hidden="true"></span></button>
+        <button type="button" class="category-button" data-category="android" aria-pressed="false"><span class="folder-icon" aria-hidden="true"></span><span>Android</span><span class="category-count"></span><span class="chevron" aria-hidden="true"></span></button>
+        <button type="button" class="category-button" data-category="personal" aria-pressed="false"><span class="folder-icon" aria-hidden="true"></span><span>Personal</span><span class="category-count"></span><span class="chevron" aria-hidden="true"></span></button>
+      </div>
+      <div id="about"></div>
+    </aside>
+  </main>
 </body>
-<script>
-    const switchEl = document.querySelector('.lang-switch');
-    const buttons = switchEl.querySelectorAll('button');
-
-    /*
-    function setActive(lang) {
-        switchEl.setAttribute('data-active', lang);
-        changeLanguage(lang);
-    }
-
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            setActive(lang);
-        });
-    });
-
-    setActive('ko');
-    */
-
-    const categoryLinks = document.querySelectorAll('.category-link');
-    const subcategoryLinks = document.querySelectorAll('.subcategory-link');
-    const postCards = document.querySelectorAll('.post-card');
-
-    const categoryMap = {
-        'web': 'web hacking',
-        'system': 'system hacking',
-        'projects': 'projects',
-        'tools': 'attack tools',
-        'mitre': 'mitre att&ck',
-        'programming': 'language'
-    };
-
-    function setActive(link) {
-        categoryLinks.forEach(l => l.classList.remove('active'));
-        subcategoryLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-    }
-
-    function applyFilter(category) {
-        postCards.forEach(card => {
-            if (category === 'all') {
-                card.style.display = 'block';
-                return;
-            }
-
-            const cardCategory = card.querySelector('.card-category').textContent.trim().toLowerCase();
-            card.style.display = (cardCategory === categoryMap[category]) ? 'block' : 'none';
-        });
-    }
-
-    function applySubcategoryFilter(subcategory) {
-        postCards.forEach(card => {
-            const cardSub = (card.dataset.subcategory || '').trim().toLowerCase();
-            card.style.display = (cardSub === subcategory.trim().toLowerCase()) ? 'block' : 'none';
-        });
-    }
-
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const category = link.getAttribute('data-category');
-            setActive(link);
-            applyFilter(category);
-        });
-    });
-
-    subcategoryLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const subcategory = link.getAttribute('data-subcategory');
-            setActive(link);
-            applySubcategoryFilter(subcategory);
-        });
-    });
-
-    const allLink = document.querySelector('.category-link[data-category="all"]');
-    if (allLink) {
-        setActive(allLink);
-        applyFilter('all');
-    }
-
-</script>
-
 </html>

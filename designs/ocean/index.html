@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miyu Blog</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
+    <!-- Miyu logo font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sekuya&family=Yuji+Boku&display=swap" rel="stylesheet">
+    <!-- main-miyu font -->
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=Sekuya&family=Yuji+Boku&display=swap" rel="stylesheet"> <!-- main-subtitle 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+     <div class="ocean">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="index/miyu.mp4" type="video/mp4">
+        </video>
+
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="https://www.flaticon.com/kr/free-icons/" title="수족관 아이콘"></a>
+                    <img src="index/logo.png">
+                    <a href="index.html" class="logo-text">0xM1yu</a>
+                </div>
+                <nav>
+                    <a href="#">Contact</a>
+                    <a href="#">About Me</a>
+                    <div class="lang-switch" data-active="ko" aria-label="Language toggle">
+                        <button type="button" data-lang="ko">Korean</button>
+                        <button type="button" data-lang="en">English</button>
+                        <span class="thumb" aria-hidden="true"></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <section class="main-section">
+            <div class="main-div">
+                <h1 class="main-title">Miyu<span class="title-emoji">🎔</span></h1>
+                <p class="main-subtitle">Offensive Security · Web · Exploit Research</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search topics...">
+                    <img src="index/search.png" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+    <nav class="category-nav">
+        <div class="category-container">
+            <a href="#" class="category-link active" data-category="all">All posts</a>
+            <div class="category-group" data-parent="projects">
+                <a href="#" class="category-link" data-category="projects">Projects</a>
+                <div class="subcategory-row">
+                    <a href="#" class="subcategory-link" data-subcategory="ad-foundation">AD Foundation</a>
+                </div>
+            </div>
+            <div class="category-group" data-parent="web">
+                <a href="#" class="category-link" data-category="web">Web Hacking</a>
+                <div class="subcategory-row">
+                    <a href="#" class="subcategory-link" data-subcategory="web/cve-analysis">CVE Analysis</a>
+                    <a href="#" class="subcategory-link" data-subcategory="web/vulnerabilities">Vulnerability</a>
+                </div>
+            </div>
+            <div class="category-group" data-parent="system">
+                <a href="#" class="category-link" data-category="system">System Hacking</a>
+                <div class="subcategory-row">
+                    <a href="#" class="subcategory-link" data-subcategory="system/cve-analysis">CVE Analysis</a>
+                </div>
+            </div>
+            <div class="category-group" data-parent="tools">
+                <a href="#" class="category-link" data-category="tools">Attack Tools</a>
+                <div class="subcategory-row">
+                    <a href="#" class="subcategory-link" data-subcategory="burpsuite">Burp Suite</a>
+                </div>
+            </div>
+            <div class="category-group" data-parent="mitre">
+                <a href="#" class="category-link" data-category="mitre">MITRE ATT&CK</a>
+                <div class="subcategory-row">
+                    <a href="#" class="subcategory-link" data-subcategory="Reconnaissance">Reconnaissance</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Resource Development">Resource Development</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Initial Access">Initial Access</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Execution">Execution</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Persistence">Persistence</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Privilege Escalation">Privilege Escalation</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Defense Evasion">Defense Evasion</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Credential Access">Credential Access</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Discovery">Discovery</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Lateral Movement">Lateral Movement</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Collection">Collection</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Command and Control">Command and Control</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Exfiltration">Exfiltration</a>
+                    <a href="#" class="subcategory-link" data-subcategory="Impact">Impact</a>
+                </div>
+            </div>
+            <a href="#" class="category-link" data-category="programming">Language</a>
+        </div>
+    </nav>
+
+    <main class="layout">
+        <section class="main-content">
+            <ul class="post-list">
+                <li class="post-card" data-subcategory="web/cve-analysis">
+                    <a href="/ejs-ssti-analysis" class="card-link">
+                        <div class="post-thumbnail">
+                            <img src="assets/web/cve-analysis/ejs-ssti/ejs_ssti.png" alt="esj 3.1.x ssti 취약점 분석 썸네일">
+                        </div>
+                        <div class="card-meta">
+                            <span class="card-category">Web Hacking</span>
+                            <span class="card-date">17 Jan 2026</span>
+                        </div>
+                        <p>ejs 3.1.x SSTI 취약점 분석</p>
+                        <span class="card-description">ejs 템플릿에서 발생하는 SSTI 취약점을 분석합니다.</span>
+                    </a>
+                </li>
+                <li class="post-card" data-subcategory="web/vulnerabilities">
+                    <a href="/mass-assignment" class="card-link">
+                        <div class="post-thumbnail">
+                            <img src="assets/web/vulnerabilities/mass-assignment-vulnerability.png">
+                        </div>
+                        <div class="card-meta">
+                            <span class="card-category">Web Hacking</span>
+                            <span class="card-date">09 June 2026</span>
+                        </div>
+                        <p>Mass Assignment Vulnerability란?<br>원인과 대응 방법</p>
+                        <span class="card-description">Mass Assignment 취약점의 개념과 원인을 분석합니다.</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+<script>
+    const switchEl = document.querySelector('.lang-switch');
+    const buttons = switchEl.querySelectorAll('button');
+
+    /*
+    function setActive(lang) {
+        switchEl.setAttribute('data-active', lang);
+        changeLanguage(lang);
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            setActive(lang);
+        });
+    });
+
+    setActive('ko');
+    */
+
+    const categoryLinks = document.querySelectorAll('.category-link');
+    const subcategoryLinks = document.querySelectorAll('.subcategory-link');
+    const postCards = document.querySelectorAll('.post-card');
+
+    const categoryMap = {
+        'web': 'web hacking',
+        'system': 'system hacking',
+        'projects': 'projects',
+        'tools': 'attack tools',
+        'mitre': 'mitre att&ck',
+        'programming': 'language'
+    };
+
+    function setActive(link) {
+        categoryLinks.forEach(l => l.classList.remove('active'));
+        subcategoryLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    }
+
+    function applyFilter(category) {
+        postCards.forEach(card => {
+            if (category === 'all') {
+                card.style.display = 'block';
+                return;
+            }
+
+            const cardCategory = card.querySelector('.card-category').textContent.trim().toLowerCase();
+            card.style.display = (cardCategory === categoryMap[category]) ? 'block' : 'none';
+        });
+    }
+
+    function applySubcategoryFilter(subcategory) {
+        postCards.forEach(card => {
+            const cardSub = (card.dataset.subcategory || '').trim().toLowerCase();
+            card.style.display = (cardSub === subcategory.trim().toLowerCase()) ? 'block' : 'none';
+        });
+    }
+
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const category = link.getAttribute('data-category');
+            setActive(link);
+            applyFilter(category);
+        });
+    });
+
+    subcategoryLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const subcategory = link.getAttribute('data-subcategory');
+            setActive(link);
+            applySubcategoryFilter(subcategory);
+        });
+    });
+
+    const allLink = document.querySelector('.category-link[data-category="all"]');
+    if (allLink) {
+        setActive(allLink);
+        applyFilter('all');
+    }
+
+</script>
+
+</html>

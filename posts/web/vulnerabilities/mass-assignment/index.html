@@ -1,5 +1,5 @@
 ---
-permalink: /mass-assignment
+permalink: /mass-assignment/
 ---
 <!DOCTYPE html>
 <html lang="ko">
@@ -12,12 +12,12 @@ permalink: /mass-assignment
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="Mass Assignment Vulnerability">
-  <meta property="og:image" content="https://0xm1yu.github.io/assets/web/vulnerabilities/mass-assignment-vulnerability.png">
+  <meta property="og:image" content="https://0xm1yu.github.io/posts/web/vulnerabilities/mass-assignment/mass-assignment-vulnerability.png">
   <meta property="og:description" content="Mass Assignment 취약점의 개념과 발생 원인을 분석하고 대응 방법을 정리했습니다!">
 
-  <link rel="stylesheet" href="/template.css">
+  <link rel="stylesheet" href="/template.css?v=20261022-refactor">
   <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <script src="/scripts/article.js?v=20261022-refactor" defer></script>
 </head>
 
 <body>
@@ -68,15 +68,15 @@ permalink: /mass-assignment
 
       <article class="article">
         <h2 id="intro">들어가며</h2>
-        <hr class="post-devider">
+        <hr class="post-divider">
         <p>웹사이트를 개발하다 보면 클라이언트가 보낸 데이터를 객체에 한 번에 담아주는 Mass Assignment 기능을<br>자주 사용하게 된다.</p>
         <p>이 기능은 개발 생산성을 크게 높여주지만 잘못 사용하면 보안 취약점으로 이어질 수 있어 조심해야 한다.</p>
         <p>오늘은 Mass Assignment라는 기능이 무엇인지, 그리고 왜 문제가 되는지 정리해보았다!</p>
-        <img src="/assets/study.jpg" style="display:block; margin:40px auto; max-width:300px; height:auto;">
+        <img src="/assets/study.jpg" class="study-image">
         <s style="font-size: 18px">사실은 CTF나 워게임을 풀 때 Mass Assignment 취약점을 자주 만났었는데 시간이 지나고 계속 까먹고 또 까먹고를<br>반복해서 머리에 확실하게 저장하려고 블로그 글을 쓴다.</s>
 
         <h2 id="mass-assignment">Mass Assignment란?</h2>
-        <hr class="post-devider">
+        <hr class="post-divider">
         <p>Mass Assignment는 클라이언트가 전송한 요청 데이터를 객체의 여러 필드에 한 번에 할당하는 기능을 의미한다. </p>
         <p>예를 들어 회원가입을 위해 사용자가 다음과 같은 데이터를 보냈다고 가정해보자.</p>
 <pre><code>
@@ -125,7 +125,7 @@ public User createUser(@RequestBody User user) {
             </div>
         </div>
         <h2 id="mass-assignment-vulnerability">무엇이 문제인가 - Mass Assignment Vulnerability</h2>
-        <hr class="post-devider">
+        <hr class="post-divider">
         <p>여기까지만 보면 그저 편리한 기능일 뿐이다. 하지만 사용자가 보낸 데이터를 검증 없이 바로 객체에 바인딩할 때 문제가 발생한다.<br>다시 User 객체를 살펴보자.</p>
 <pre><code>
 public class User { 
@@ -156,16 +156,16 @@ user.setAdmin(true);
         <p>이처럼 사용자가 수정해서는 안 되는 필드까지 자동으로 객체에 매핑되는 취약점을 Mass Assignment Vulnerability라고 한다.</p>
         
         <h2 id="example">Mass Assignment Vulnerability 예시: 2012년 Github 사건</h2>
-        <hr class="post-devider">
+        <hr class="post-divider">
         <p>가장 유명한 Mass Assignment 취약점 사례는 2012년에 발생한 Github 사건이다.</p>
         <p>당시 Github에는 사용자의 공개키(SSH Key)를 등록하는 기능이 있었는데, 공격자는 API 요청에 원래 의도되지 않은<br>파라미터를 추가하여 다른 사용자의 저장소와 자신의 공개키를 연결하는 데 성공하였다.<br>결과적으로 공격자는 해당 저장소에 대한 Push 권한을 획득할 수 있었다.</p>
         <p>이 사건의 발단은 한 개발자 Egor Homakov였다.<br>그는 Github가 사용하던 Ruby on Rails의 Mass Assignment 기능의 위험성을 여러 차례 알렸지만 심각하게 받아들여지지 않자, 결국 직접 취약점을 시연했다고 한다.<br></p>
         <p>실제로 <a href="http://homakov.blogspot.com/2012/03/how-to.html" class="text-link">그의 블로그</a>에는 I was angry because nobody wanted to take me and mass-assignment issue seriously. 라고 적혀 있다. 조금 웃프다 ..</p>
 
         <h2 id="solutions">대응 방법</h2>
-        <hr class="post-devider">
+        <hr class="post-divider">
         <p>핵심 원칙은 하나이다.<br>클라이언트가 보낸 입력을 도메인 객체에 곧바로 바인딩하지 말 것! OWASP가 권장하는 방법을 정리해보았다.</p>
-        <h3 style="font-size: 21px; margin: 0px 0px 4px 0px">1. DTO로 입력 객체 분리하기</h3>
+        <h3 class="solution-title">1. DTO로 입력 객체 분리하기</h3>
         <p>입력 전용 객체(DTO)를 따로 만드는 것이다.<br>사용자가 수정해도 되는 필드만 DTO에 담고, DTO를 통해 받은 값을 필요한 필드에 직접 매핑한다.<br>Spring MVC를 예시로 들면 다음과 같다.</p>
 <pre><code>
  @Entity
@@ -201,7 +201,7 @@ user.setAdmin(true);
   }
 
 </code></pre>
-        <h3 style="font-size: 21px; margin: 0px 0px 4px 0px">2. Allowlist 사용</h3>
+        <h3 class="solution-title">2. Allowlist 사용</h3>
         <p>바인딩 가능한 필드를 명시적으로 허용 목록으로 지정하여 사용하는 방법이다.<br>이렇게 하면 허용된 필드 외의 값을 무시할 수 있다. Spring MVC를 예시로 들면 다음과 같다.</p>
 <pre><code>
 // 폼/쿼리 파라미터(@ModelAttribute)를 받는 경우
@@ -220,7 +220,7 @@ user.setAdmin(true);
                 <p><code class="inline-code">@InitBinder</code>는 <code class="inline-code">@ModelAttribute</code> 바인딩에만 적용된다.<br>따라서 이 글의 <code class="inline-code">createUser</code>처럼 <code class="inline-code">@RequestBody(JSON)</code>로 받을 때에는 DTO 방식이나 아래 blacklist 방식을 사용한다.</p>
             </div>
         </div>        
-        <h3 style="font-size: 21px; margin: 0px 0px 4px 0px">3. Blacklist 사용</h3>
+        <h3 class="solution-title">3. Blacklist 사용</h3>
         <p>특정 필드를 차단하는 방식도 가능하지만, 새롭게 민감한 필드가 추가됐을 때 누락될 위험이 있으므로 Blacklist 방식보다는 1번의 DTO 방식을 권장한다.<br>Spring MVC를 예시로 들면 다음과 같다.</p>
 <pre><code>
 public class User {
@@ -235,7 +235,7 @@ public class User {
 </code></pre>        
 
         <h2 id="reference">Reference</h2>
-        <hr class="post-devider">
+        <hr class="post-divider">
         <a href="https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html" class="text-link">https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html</a>
           <br>
           <br>
@@ -256,33 +256,5 @@ public class User {
   </footer>
 </body>
 
-<script>
-  const sections = document.querySelectorAll(".article h2");
-  const links = document.querySelectorAll(".toc-link");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-
-          links.forEach((link) => {
-            link.classList.remove("toc-link--active");
-
-            if (link.getAttribute("href") === `#${id}`) {
-              link.classList.add("toc-link--active");
-            }
-          });
-        } 
-      });
-    },
-    {
-      rootMargin: "-30% 0px -60% 0px",
-      threshold: 0,
-    }
-  );
-
-  sections.forEach((section) => observer.observe(section));
-</script>
 
 </html>
